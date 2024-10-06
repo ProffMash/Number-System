@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Converter App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Number Converter App</h1>
+      <p>Convert between Binary, Octal, Decimal, Hexadecimal, and Roman numeral systems with ease.</p>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+          <span class="slider"></span>
+        </label>
+        <span>Toogle Theme</span>
+      </div>
+      <button id="toggleVoiceButton" onclick="toggleVoice()">Disable Voice Output</button>
+    </header>
+    
+    <section class="converter">
+      <div class="form-group">
+        <label for="inputNumber">Enter Number</label>
+        <input type="text" id="inputNumber" placeholder="Enter a number" oninput="convertNumber()">
+        <span class="tooltip">Example: Binary (1010), Octal (12), Decimal (10), Hex (A), Roman (XII)</span>
+      </div>
+
+      <div class="form-group">
+        <label for="inputSystem">From System</label>
+        <select id="inputSystem" onchange="convertNumber()">
+          <option value="binary">Binary</option>
+          <option value="octal">Octal</option>
+          <option value="decimal" selected>Decimal</option>
+          <option value="hexadecimal">Hexadecimal</option>
+          <option value="roman">Roman</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="outputSystem">To System</label>
+        <select id="outputSystem" onchange="convertNumber()">
+          <option value="binary">Binary</option>
+          <option value="octal">Octal</option>
+          <option value="decimal">Decimal</option>
+          <option value="hexadecimal">Hexadecimal</option>
+          <option value="roman">Roman</option>
+        </select>
+      </div>
+
+      <div id="output" class="output"></div>
+
+      <div class="button-group">
+        <button onclick="resetConverter()">Reset</button>
+        <button onclick="clearHistory()">Clear History</button>
+      </div>
+      
+      <div class="form-group">
+        <label for="historySearch">Search History</label>
+        <input type="text" id="historySearch" placeholder="Search..." oninput="searchHistory()">
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>Conversion History</h2>
+      <ul id="historyList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
