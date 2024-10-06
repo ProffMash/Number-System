@@ -63,7 +63,7 @@ function convertNumber() {
                 result = '';
         }
 
-        outputElement.textContent = `Result: ${result}`;
+        // outputElement.textContent = `Result: ${result}`;
         addToHistory(inputNumber, inputSystem, result, outputSystem);
 
         // Voice output if enabled
